@@ -1,0 +1,104 @@
+
+
+  .login{
+    //   background-color: var(--color-dark-medium);
+      max-width:20%;
+      text-align: center;
+      padding:2em;
+
+      margin: 3.3em auto;  
+      
+     .elements{
+         margin-top:16px;
+         padding: 5px;
+     }
+      label{
+          float: left;
+          width: 20%;
+          margin: 0px;
+          padding: 0px;
+          display: block;
+          font-family: 'Zen Antique Soft', serif;
+          font-size: 1em;
+      }
+      input{
+        width: 300px;
+    }
+
+      button{
+        font-family: 'Zen Antique Soft', serif;
+        font-size:1em;
+        
+      }
+
+      h3{
+        font-family: 'Zen Antique Soft', serif;
+        font-size: 1em;
+      }
+
+  }
+  .error_message{
+    p{
+        font-family: 'Zen Antique Soft', serif;
+        font-size: 1em; 
+        
+    }
+}
+
+  
+
+  #seperate {
+    width: 150px;
+    height: 5px;
+    margin: 10px auto;
+    display: block;
+    background: #b6aa09;
+}
+
+@media only screen and (min-width: 267px) and (max-width: 567px){
+
+  .login{
+
+    max-width:100%;
+    text-align: center;
+    padding:2em;
+
+    margin: 0 auto;  
+
+    .elements{
+        margin-top:20px;
+        padding: 0;
+    
+     label{
+         float: left;
+         width: 20%;
+         margin: 0px;
+         padding: 0px;
+         display: flex;
+         font-family: 'Zen Antique Soft', serif;
+         font-size: 12px;
+     }
+     input{
+       width: 400px;
+    }
+    
+    
+     
+    
+     h3{
+       font-family: 'Zen Antique Soft', serif;
+       font-size: 1em;
+     }
+    
+    }
+    
+    #sign-in{
+      button{
+        font-family: 'Zen Antique Soft', serif;
+        font-size: 10px;
+        
+      }
+    }
+  }
+
+}

@@ -1,0 +1,26 @@
+.center{
+    display:flex;
+    justify-content:center;
+
+    font-family: 'Zen Antique Soft', serif;
+
+    h3{
+        font-family: 'Zen Antique Soft', serif;
+    }
+}
+
+@media only screen and (min-width: 268px) and (max-width:768px){
+    .center{
+            margin:0px;
+            position:relative;
+            top:0px;
+            right:0px;
+            bottom:0px;
+            left:0px;
+            font-family: 'Zen Antique Soft', serif;
+    
+        h3{
+            font-family: 'Zen Antique Soft', serif;
+        }
+    }
+}

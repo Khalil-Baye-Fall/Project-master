@@ -1,0 +1,42 @@
+<div class="uk-container uk-margin login">
+    <div class="uk-margin">
+        <h3>Login</h3>
+        <span id="seperate"></span>
+    </div>
+    <form (ngSubmit)="Login()">
+        <div class="elements">
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-horizontal-text">Usename:</label>
+                <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: user"></span>
+                    <input class="uk-input" type="text" name="username" [(ngModel)]="model.username">
+                </div>
+            </div>
+        
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-horizontal-text">Password:</label>
+                <div class="uk-inline">
+                    <span class="uk-form-icon uk-form-icon" uk-icon="icon: lock"></span>
+                    <input class="uk-input" type="password" name="password" [(ngModel)]="model.password">
+                </div>
+            </div>
+    
+        </div>
+        
+        <div class="uk-margin" id="sign-in">
+
+            <button class="uk-button uk-button-secondary">Sign-in</button>
+            <h3>Do not have an account? <a routerLink="/register">Sign-up</a></h3>
+
+            <div class="uk-alert-danger error_message" uk-alert *ngIf="errorMessage">
+                <a class="uk-alert-close" uk-close></a>
+                <p>{{errorMessage}}</p>
+            </div>
+
+        </div>
+       
+        
+    
+    </form>
+</div>
+

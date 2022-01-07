@@ -1,0 +1,57 @@
+<div class="uk-container uk-margin register">
+    <div class="uk-margin" id="tilte">
+        <h3>Registration</h3>
+        <span id="seperate"></span>
+    </div>
+
+    <form action="" (ngSubmit)="SingUp()">
+        <div class="uk-container elements">
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-horizontal-text">Usename:</label>
+                <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: user"></span>
+                    <input class="uk-input" type="text" placeholder="Username" name="username" [(ngModel)]="model.username">
+                </div>
+            </div>
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-horizontal-text">Email:</label>
+                <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: mail"></span>
+                    <input class="uk-input" type="email" placeholder="Email" name="email" [(ngModel)]="model.email">
+                </div>
+            </div>
+
+        
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-horizontal-text">Password:</label>
+                <div class="uk-inline">
+                    <span class="uk-form-icon uk-form-icon" uk-icon="icon: lock"></span>
+                    <input class="uk-input" type="password" placeholder="Password" name="password" [(ngModel)]="model.password">
+                </div>
+            </div>
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-horizontal-text">Confirmation Password:</label>
+                <div class="uk-inline">
+                    <span class="uk-form-icon uk-form-icon" uk-icon="icon: lock"></span>
+                    <input class="uk-input" type="password" placeholder="Confirmation Password" name="password2" [(ngModel)]="model.password2">
+                </div>
+            </div>
+        </div>
+        <div class="uk-margin" id="sign-up" style="text-align: center">
+
+            <button class="uk-button uk-button-secondary" >Sign-up</button>
+            <h3>Have you an account already? <a routerLink="/login">Sign-in</a></h3>
+
+            <div class="uk-margin error_message" *ngFor="let message of message_error | keyvalue">
+                <div class="uk-alert-danger" uk-alert>
+                    <a class="uk-alert-close" uk-close></a>
+                    <p>{{message.value}}</p>
+                </div>
+            </div>
+
+
+
+        </div>
+    </form>
+    
+</div>

@@ -1,0 +1,20 @@
+<div id="left-navigation" uk-offcanvas>
+    <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+            <h2 class="title">Name_app</h2>
+
+            <p class="uk-article-meta" style="font-style: italic; color: blanchedalmond;"> Introduction ......................... </p>
+
+            <li routerLinkActive="uk-active"><a routerLinkActive="uk-active" routerLink=''>Home</a></li>
+            <li routerLinkActive="uk-active"><a  routerLinkActive="uk-active" routerLink='' >Profile</a></li>
+            <li routerLinkActive="uk-active"><a >Services</a></li>
+            <li routerLinkActive="uk-active"><a >Requests</a></li>
+
+            <li><button class="uk-button uk-button-danger uk-margin-top"  (click)="authService.SignOut()">Sign-out</button></li>
+
+        </ul>
+
+    </div>
+</div>

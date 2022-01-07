@@ -1,0 +1,62 @@
+version: '3'
+services:
+  # frontend container
+  frontend_1:
+   container_name: frontendMain
+   build:
+     context: ./Frontend/frontendMain
+     dockerfile: Dockerfile
+   volumes:
+     - '/frontendMain/node_modules'
+   restart: on-failure
+   ports:
+     - '4203:4200'
+   environment:
+     - CHOKIDAR_USEPOLLING=true
+   depends_on:
+     - backend
+
+     
+  # backend container 
+  backend:
+   build: ./backend
+   command: python manage.py runserver 0.0.0.0:8000
+   volumes:
+     - ./backend:/code
+   restart: on-failure
+   ports:
+     - "8000:8000"
+   depends_on: 
+     - db
+  
+# For our first microservice and main app service
+
+  # build mysql with mysql image.......
+  db:
+    image: mysql:5.7.22
+    restart: always
+    environment:
+      - MYSQL_DATABASE=finance
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - ./db:/var/lib/mysql
+    ports:
+      - "3309:3306"
+
+  # for phpmyadmin to visualize all databases and tables through communication with django-mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 8081:80
+
+# -----------------------------------------------------------------------------------------------

@@ -1,0 +1,70 @@
+<nav class="uk-navbar-container uk-margin" uk-navbar>
+
+    <!-- navbar left -->
+    <div class="uk-navbar-left">
+
+        <a class="uk-navbar-toggle" href="#left-navigation" uk-toggle>
+            <span uk-navbar-toggle-icon></span> <span class="uk-margin-small-left" style="color:black"> Menu</span>
+        </a>
+
+        <a class="uk-navbar-item uk-logo" routerLink="home"><img src="assets/images/logo.png" alt=""></a>
+
+        <ul class="uk-navbar-nav app_name">
+            <li>
+                <a routerLink="home">
+                    <span class="uk-icon uk-margin-small-right " uk-icon="icon: star"></span>
+                    App_Name
+                </a>
+            </li>
+        </ul>
+
+        <div class="uk-navbar-item elements">
+            <div><a href="#">Contacts</a></div>
+        </div>
+
+        <div class="uk-navbar-item">
+            <form action="">
+                <input class="uk-input uk-form-width-large" type="text" placeholder="Input">
+                <button style="margin-left: 5px;"class="uk-button uk-button-default search">Serach</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- navbar right -->
+    
+    <div class="uk-navbar-right auth">
+
+        <div class="uk-container sign-out"  *ngIf="authService.loggedIn()">
+            <div class="uk-container info">
+                <p class="username"> {{username}}</p>
+            </div>
+            <div class="uk-container">
+                
+                <button class="uk-button-danger uk-button-small uk-margin-small-right" (click)="authService.SignOut()">
+                    <span uk-icon="sign-out"></span>
+                    Sign-Out
+                </button>
+            </div>
+           
+        </div>
+        <div class="container">
+            <button class="uk-button-primary uk-button-small uk-margin-small-right" *ngIf="!authService.loggedIn()">
+                <a routerLink="login">
+                    <span uk-icon="sign-in"></span>
+                    Sign-in
+                </a>
+            </button>
+            <button class="uk-button-default uk-button-small uk-margin-small-right" *ngIf="!authService.loggedIn()">
+                <a routerLink="register">
+                    <span uk-icon="user"></span>
+                    Sign-up
+                </a>
+            </button>
+        </div>
+       
+    </div>
+
+    
+</nav>
+
